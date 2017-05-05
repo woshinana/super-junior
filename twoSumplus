@@ -1,0 +1,14 @@
+nums = input()
+nums = eval(nums)
+buff_dict = {}
+targets = int(input())
+b = 1
+i = 0
+for i in range(len(nums)):
+     if nums[i] in buff_dict:
+         b = 0
+         print([buff_dict[nums[i]],i])
+     else:
+         buff_dict[targets - nums[i]] = i
+if b:
+    print("no matching!")
