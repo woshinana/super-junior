@@ -1,0 +1,19 @@
+a = input()
+a = eval(a)
+b = 1
+i = 0
+sum = int(input())
+length = len(a)
+while i < length:
+    x = 0
+    while x < length:
+        print(x)
+        subsum = a[i] + a[x]
+        if subsum == sum:
+            if i < x:
+                b= 0
+                print([i,x])
+        x = x + 1
+    i = i + 1
+if b:
+    print("no matching")
