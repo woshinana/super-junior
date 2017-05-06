@@ -1,0 +1,22 @@
+a = input()
+a = int(a)
+if a < -2147483648 or a > 2147483647:
+    print(0)
+else:
+    if a < 0:
+        negative = 1
+        a = abs(a)
+    else:
+        negative = 0
+    integer = 0
+    while  a > 0:
+        remainder = a % 10
+        merchant = a//10
+        integer = integer * 10 + remainder
+        a = merchant
+    if negative:
+        integer = - integer
+if integer < -2147483648 or integer > 2147483647:
+    print(0)
+else:
+    print(integer)
