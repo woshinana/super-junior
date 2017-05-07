@@ -1,0 +1,30 @@
+s = input()
+length = len(s)
+d = {'(':1, '[':2, '{':3, '}':4, ']':5, ')':6,}
+i = 0
+b = []
+i = 0
+sign = 0
+if length % 2 != 0:
+    print(False)
+else:
+    for i in range(length):
+        if d[s[i]] < 4:
+            b.append(s[i])
+        else:
+            if len(b) == 0 and d[s[i]] > 3:
+                print(False)
+                sign = 1
+                break
+            else:
+                if d[s[i]] + d[b[-1]] == 7:
+                    b.pop()
+                else:
+                    print(False)
+                    sign = 1
+                    break
+        sign = 0
+    if sign == 0 and len(b) == 0:
+        print(True)
+    else:
+        print(False)
