@@ -1,0 +1,33 @@
+import string
+s = input()
+if len(s) == 0:
+    print("no marching!")
+else:
+    s = s.split(',')
+    b = []
+    len_all = len(s)
+    len_next = len(s[0])
+    i = 1
+    while i < len_all:
+        len_next = min(len(s[i]),len_next)
+        i = i+ 1
+    x = 0
+    while x < len_next:
+        sign = 0
+        i = 0
+        while i < (len_all - 1):
+            if s[i][x] == s[i+1][x]:
+                i = i + 1
+            else:
+                sign = 1
+                break
+        if sign == 0:
+            b.append(s[0][x])
+        else:
+            break
+        x = x + 1
+    if b:
+        print("".join(b))
+    #     以空格为界限输出list b
+    else:
+        print("no marching")
