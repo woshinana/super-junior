@@ -1,0 +1,25 @@
+a = input()
+a = int(a)
+if a < 0:
+    print(False)
+else:
+    b = a
+    i = 0
+    while  b:
+        i = i + 1
+        b = b // 10
+    length = i
+    b = a
+    sign = 0
+    while length > 1:
+        if b // pow(10,length - 1) == b % 10:
+            b = b % pow(10,length-1)
+            b= b // 10
+            length = length - 2
+        else:
+            sign = 1
+            break
+    if sign == 0:
+        print(True)
+    else:
+        print(False)
