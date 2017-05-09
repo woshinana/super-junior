@@ -1,0 +1,12 @@
+nums  = [1,1,2]
+if len(nums) < 2:
+    print(nums)
+    print(len(nums))
+else:
+    length = len(nums)
+    newTail = 0
+    for i in range(1,length):
+        if nums[i] != nums[newTail]:
+            newTail = newTail + 1
+            nums[newTail] = nums[i]
+    print(newTail + 1)
