@@ -1,0 +1,17 @@
+haystack = "aaa"
+needle = "aa"
+sl = len(needle)
+flag = 0
+for i in range(len(haystack)-sl + 1):
+    k = 0
+    s = []
+    while k < sl:
+        s.append(haystack[i+k])
+        k = k +1
+    s = ''.join(s)
+    print(s)
+    if s == needle:
+        print(i)
+        flag = 1
+if not(flag):
+    print(-1)
