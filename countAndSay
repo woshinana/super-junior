@@ -1,0 +1,31 @@
+def countAndSay(n):
+    length = 0
+    s = []
+    stri = []
+    while n > 0:
+        a = n % 10
+        s.insert(0,a)
+        n = n //10
+    i = 0
+    while i < len(s):
+        a =s[i]
+        num = 1
+        for j in range(i+1,len(s)):
+            if s[j] == a:
+               num = num + 1
+            else:
+                break
+        stri.append(str(num))
+        stri.append(str(a))
+        i = i + num
+    stri = ''.join(stri)
+    return int(stri)
+
+n = 5
+a = 1
+if n == 1:
+    print(str(n))
+else:
+    for i in range(n - 1):
+        a = countAndSay(a)
+print(str(a))
