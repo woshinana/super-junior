@@ -1,0 +1,19 @@
+n = 6
+s = ['1']
+result = '1'
+for i in range(n-1):
+    tmp = []
+    start = 0
+    while start < len(s):
+        count = 1
+        next = start + 1
+        while next < len(s) and s[next] == s[start]:
+            next = next + 1
+            count = count + 1
+        tmp.append(str(count))
+        tmp.append(str(s[start]))
+        start = next
+    print(result)
+    result = ''.join(tmp)
+    s = tmp
+print(result)
