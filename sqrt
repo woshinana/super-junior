@@ -1,0 +1,10 @@
+x = 10
+if x <= 2:
+    print(1)
+for i in range(1,x+1):
+    if i * i == x:
+        print(i)
+        break
+    elif i * i > x:
+        print(i-1)
+        break
