@@ -1,0 +1,29 @@
+class Solution(object):
+    def levelOrderBottom(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[List[int]]
+        """
+        res =[]
+        if not root:
+            return res
+        else:
+            Nodelist = [root]
+            j = [root.val]
+            res.append(j)
+            i = 0
+            while Nodelist:
+                tree  = []
+                j = []
+                for node in Nodelist:
+                    if node.left:
+                        j.append(node.left.val)
+                        tree.append(node.left)
+                    if node.right:
+                        j.append(node.right.val)
+                        tree.append(node.right)
+                Nodelist = tree
+                if j:
+                    res.append(j)
+            res = list(reversed(res))
+            return res
